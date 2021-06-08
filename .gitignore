@@ -16,6 +16,9 @@ drivers/win7/Debug/
 drivers/win7/Release/
 drivers/win7/x64/
 
+# macOS driver
+chipsec/helper/osx/chipsec.kext/
+
 # Compression tools
 chipsec_tools/compression/Bin/
 

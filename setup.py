@@ -114,7 +114,7 @@ class build_ext(_build_ext):
         self.copy_tree(os.path.join("drivers", "osx"), build_driver)
         # Run the command line version of XCode there.
         subprocess.check_output(["xcodebuild", "-project", xcodeproject,
-                                 "-target", "chipsec"])
+                                 "-scheme", "chipsec"])
         # And copy the resulting .kext (directory) to the right place.
         # That is to the source directory if we are in "develop" mode,
         # otherwise to the helper subdirectory in the build directory.
