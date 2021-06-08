@@ -73,21 +73,25 @@
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
     <IncludePath>$(ProjectDir)\include\;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
+    <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
     <IncludePath>$(ProjectDir)\include\;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
+    <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
     <IncludePath>$(ProjectDir)\include\;$(IncludePath)</IncludePath>
     <LibraryPath>$(DDK_LIB_PATH)</LibraryPath>
+    <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
     <IncludePath>$(ProjectDir)\include\;$(IncludePath)</IncludePath>
     <LibraryPath>$(DDK_LIB_PATH)</LibraryPath>
+    <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
@@ -100,6 +104,9 @@
       <Command>mkdir ..\..\chipsec\helper\win\win7_amd64
 copy "$(DbgengLocalCommand)" ..\..\chipsec\helper\win\win7_amd64</Command>
     </PostBuildEvent>
+    <DriverSign>
+      <FileDigestAlgorithm>SHA1</FileDigestAlgorithm>
+    </DriverSign>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <MASM>
@@ -115,6 +122,9 @@ copy "$(DbgengLocalCommand)" ..\..\chipsec\helper\win\win7_amd64</Command>
       <Command>mkdir ..\..\chipsec\helper\win\win7_x86
 copy "$(DbgengLocalCommand)" ..\..\chipsec\helper\win\win7_x86</Command>
     </PostBuildEvent>
+    <DriverSign>
+      <FileDigestAlgorithm>SHA1</FileDigestAlgorithm>
+    </DriverSign>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Link>
@@ -128,6 +138,9 @@ copy "$(DbgengLocalCommand)" ..\..\chipsec\helper\win\win7_x86</Command>
       <Command>mkdir ..\..\chipsec\helper\win\win7_x86
 copy "$(DbgengLocalCommand)" ..\..\chipsec\helper\win\win7_x86</Command>
     </PostBuildEvent>
+    <DriverSign>
+      <FileDigestAlgorithm>SHA1</FileDigestAlgorithm>
+    </DriverSign>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Link>
@@ -137,6 +150,9 @@ copy "$(DbgengLocalCommand)" ..\..\chipsec\helper\win\win7_x86</Command>
       <Command>mkdir ..\..\chipsec\helper\win\win7_amd64
 copy "$(DbgengLocalCommand)" ..\..\chipsec\helper\win\win7_amd64</Command>
     </PostBuildEvent>
+    <DriverSign>
+      <FileDigestAlgorithm>SHA1</FileDigestAlgorithm>
+    </DriverSign>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Inf Include="chipsec_hlpr.inf" />

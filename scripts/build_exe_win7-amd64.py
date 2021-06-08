@@ -40,6 +40,7 @@
 import os
 import sys
 
+from setuptools import setup, find_packages
 print('Python', sys.version)
 
 import py2exe
@@ -115,7 +116,8 @@ setup(
                             'build': { 'build_base': build_dir },
                             'py2exe': {
                                         'dist_dir': win_7_amd64,
-                                        'packages': mypackages,
+                                        # 'packages': mypackages,
+                                        'packages': find_packages(exclude=["tests.*", "tests"]),
                                         'compressed': True
                                       }
                           }

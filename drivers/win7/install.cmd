@@ -69,8 +69,8 @@ goto :donesetup
 @REM VCINSTALLDIR indicates a developer environment
 if defined VCINSTALLDIR goto :donesetup
 @REM search for VS installations
-  if exist "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"  call :set_vsvars "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
-  if exist "%ProgramFiles%\Microsoft Visual Studio\Installer\vswhere.exe"       call :set_vsvars "%ProgramFiles%\Microsoft Visual Studio\Installer\vswhere.exe"
+  if exist "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"  call :set_vsvars "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -prerelease
+  if exist "%ProgramFiles%\Microsoft Visual Studio\Installer\vswhere.exe"       call :set_vsvars "%ProgramFiles%\Microsoft Visual Studio\Installer\vswhere.exe" -prerelease
 goto :finish
 
 :donesetup
